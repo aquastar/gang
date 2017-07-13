@@ -6,7 +6,9 @@ print(res.data)  # All
 print(res.data['media']['nodes'])  # Media list
 
 # Next page
-while 1:
+ins_cnt = 2
+while ins_cnt >0 :
+    ins_cnt -=1
     res = ie.tag('ms13', res.cursor)
     print(res.data)  # All
     print(res.data['media']['nodes'])  # Media list
