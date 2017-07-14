@@ -1,9 +1,9 @@
+import cPickle as pk
+import json
+import os
 import traceback
 
 import requests
-import json
-import os
-import cPickle as pk
 
 img_txt_list = []
 page_lmt = 300
@@ -12,10 +12,13 @@ fname = 'img_txt_list.pk'
 if os.path.isfile(fname):
     img_txt_list = pk.load(open(fname, 'rb'))
 
-query_list = ['drinking', 'alcohol', 'drunk party', 'booze', 'liquor', 'binge drinking', 'beer', 'whiskey',
-              'bar', 'neon', 'bartender', 'shot glass', 'ale', 'ipa', 'corona',
-              'Budweiser', 'guns', 'gangsters', 'firearms', 'tattoo', 'smoking', 'bitch', 'drug', 'tease', 'temper',
-              'anonymous', 'criminal', 'abuse', 'victim', 'violence', 'wrath', 'shot']
+print 'loaded data size:', len(img_txt_list)
+
+query_list = [
+    'drinking', 'alcohol', 'drunk party', 'booze', 'liquor', 'binge drinking', 'beer', 'whiskey', 'bar', 'neon',
+    'bartender',
+    'gun', 'gangster', 'firearm', 'tattoo', 'smoking', 'bitch', 'drug', 'criminal', 'victim', 'violence', 'shot'
+]
 
 for q in query_list:
     print 'Query', q
