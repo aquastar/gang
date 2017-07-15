@@ -4,9 +4,9 @@
 MSCOCO_DIR="${HOME}/models/im2txt/data/mscoco"
 
 
-# Build the preprocessing script.
+# Build the script.
 cd "${HOME}/models/im2txt/"
 bazel build //im2txt:download_and_preprocess_mscoco
 
-# Run the preprocessing script.
+# Run the script.
 bazel-bin/im2txt/download_and_preprocess_mscoco "${MSCOCO_DIR}"
